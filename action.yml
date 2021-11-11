@@ -1,9 +1,16 @@
 name: IssueChillAction
 description: Sentiment analysis for issues
 inputs:
-  content:
-    description: the content
+  owner:
+    description: repo owner
     required: true
+  repo:
+    description: repository name
+    required: true
+  issue:
+    description: issue id
+    required: true
+
 
 runs:
   using: docker
