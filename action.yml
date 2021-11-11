@@ -1,0 +1,9 @@
+name: IssueChillAction
+inputs:
+  secrets:
+    body: Issue Body
+    required: true
+
+runs:
+  using: docker
+  image: Dockerfile
