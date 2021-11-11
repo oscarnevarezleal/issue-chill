@@ -17,8 +17,8 @@ func main() {
 
 	parsedtext := sentitext.Parse(content, lexicon.DefaultLexicon)
 	sentiment := sentitext.PolarityScore(parsedtext)
-	fmt.Printf("::set-output name=POS::%f", sentiment.Positive)
-	fmt.Printf("::set-output name=NEG::%f", sentiment.Negative)
-	fmt.Printf("::set-output name=NEU::%f", sentiment.Neutral)
-	fmt.Printf("::set-output name=CMP::%f", sentiment.Compound)
+	fmt.Printf("::set-output name=POS::%f\n", sentiment.Positive)
+	fmt.Printf("::set-output name=NEG::%f\n", sentiment.Negative)
+	fmt.Printf("::set-output name=NEU::%f\n", sentiment.Neutral)
+	fmt.Printf("::set-output name=CMP::%f\n", sentiment.Compound)
 }
