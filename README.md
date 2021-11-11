@@ -53,6 +53,7 @@ jobs:
 
 ## Tech
 
-- github.com/google/go-github/v40/github
-- github.com/grassmudhorses/vader-go/lexicon
-- github.com/grassmudhorses/vader-go/sentitext
+- **Go libraries**
+  - [github.com/google/go-github/v40/github](github.com/google/go-github/v40/github)
+  - [github.com/grassmudhorses/vader-go/lexicon](github.com/grassmudhorses/vader-go/lexicon)
+  - [github.com/grassmudhorses/vader-go/sentitext](github.com/grassmudhorses/vader-go/sentitext)
