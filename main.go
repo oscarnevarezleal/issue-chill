@@ -58,8 +58,7 @@ func main() {
 	issueTitle := *issue.Title
 	issueBody := *issue.Body
 
-	fmt.Printf("%s", issueTitle)
-	fmt.Printf("%s", issueBody)
+	fmt.Printf("::set-output name=ISSUE_TITLE::%s\n", issueTitle)
 
 	parsedtext := sentitext.Parse(issueBody, lexicon.DefaultLexicon)
 	sentiment := sentitext.PolarityScore(parsedtext)
