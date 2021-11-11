@@ -52,7 +52,7 @@ func main() {
 	issue, _, err := client.Issues.Get(ctx, owner, repo, issueId)
 
 	if err != nil {
-		githubactions.Fatalf("Not such issue")
+		githubactions.Fatalf("An error occurred: %s", err.Error())
 	}
 
 	issueTitle := *issue.Title
