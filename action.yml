@@ -1,7 +1,8 @@
 name: IssueChillAction
+description: Sentiment analysis for issues
 inputs:
-  secrets:
-    body: Issue Body
+  content:
+    description: the content
     required: true
 
 runs:

@@ -9,14 +9,13 @@ import (
 import "github.com/sethvargo/go-githubactions"
 
 func main() {
-	body := githubactions.GetInput("body")
-	if body == "" {
-		githubactions.Fatalf("missing input 'body'")
+	content := githubactions.GetInput("content")
+	if content == "" {
+		githubactions.Fatalf("missing input 'content'")
 	}
-	githubactions.AddMask(body)
+	githubactions.AddMask(content)
 
-	mytext := body
-	parsedtext := sentitext.Parse(mytext, lexicon.DefaultLexicon)
+	parsedtext := sentitext.Parse(content, lexicon.DefaultLexicon)
 	sentiment := sentitext.PolarityScore(parsedtext)
 	fmt.Printf("::set-output name=POS::%f", sentiment.Positive)
 	fmt.Printf("::set-output name=NEG::%f", sentiment.Negative)
