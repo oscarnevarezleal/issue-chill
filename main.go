@@ -62,8 +62,21 @@ func main() {
 
 	parsedtext := sentitext.Parse(issueBody, lexicon.DefaultLexicon)
 	sentiment := sentitext.PolarityScore(parsedtext)
+
 	fmt.Printf("::set-output name=POS::%f\n", sentiment.Positive)
+	fmt.Printf("::set-output name=IS_50_POS::%s\n", strconv.FormatBool(sentiment.Positive > 0.5))
+	fmt.Printf("::set-output name=IS_60_POS::%s\n", strconv.FormatBool(sentiment.Positive > 0.6))
+	fmt.Printf("::set-output name=IS_70_POS::%s\n", strconv.FormatBool(sentiment.Positive > 0.7))
+	fmt.Printf("::set-output name=IS_80_POS::%s\n", strconv.FormatBool(sentiment.Positive > 0.8))
+	fmt.Printf("::set-output name=IS_90_POS::%s\n", strconv.FormatBool(sentiment.Positive > 0.9))
+
 	fmt.Printf("::set-output name=NEG::%f\n", sentiment.Negative)
+	fmt.Printf("::set-output name=IS_50_NEG::%s\n", strconv.FormatBool(sentiment.Negative > 0.5))
+	fmt.Printf("::set-output name=IS_60_NEG::%s\n", strconv.FormatBool(sentiment.Negative > 0.6))
+	fmt.Printf("::set-output name=IS_70_NEG::%s\n", strconv.FormatBool(sentiment.Negative > 0.7))
+	fmt.Printf("::set-output name=IS_80_NEG::%s\n", strconv.FormatBool(sentiment.Negative > 0.8))
+	fmt.Printf("::set-output name=IS_90_NEG::%s\n", strconv.FormatBool(sentiment.Negative > 0.9))
+
 	fmt.Printf("::set-output name=NEU::%f\n", sentiment.Neutral)
 	fmt.Printf("::set-output name=CMP::%f\n", sentiment.Compound)
 }
